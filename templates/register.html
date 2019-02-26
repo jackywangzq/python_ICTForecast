@@ -1,0 +1,180 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>my web</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script
+  			src="https://code.jquery.com/jquery-1.12.4.min.js"
+ 			integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  			crossorigin="anonymous">
+  		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    	<style>
+			.center {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				width: 750px;
+				height: 550px;
+				-webkit-transform: translateX(-50%) translateY(-50%);
+				border: solid 1px gray;
+				border-radius: 5px;
+				background-color: #fff;
+			}
+			
+			body{
+				background-image: url(login_bg.jpg);
+				background-size: cover;
+			}
+			a:hover, a:visited, a:link, a:active {
+			    text-decoration: none;
+				color: 1a73e8;;
+			}
+			#register input{
+				border: 0px;
+				outline: none;
+			}
+			.js_display{
+				visibility: hidden;
+			}
+	    </style>		
+	</head>
+
+	<body>
+		<div id="vm" class="container center" >
+			<h4 style="font-weight: 400; font-size: 24px; line-height: 32px;">创建属于您的账号</h4>
+			<div id="register" class="row">
+				<div id="" class="col-xs-6">
+					<div id="" class="row">
+						<div id="" class="col-xs-6" >
+							<p style="border: 0px;" :class="{js_display:r}">姓名</p>
+							<input type="text" :placeholder="firstname" style="border: 0px;" @click="handle_click" @blur="handle_blur()"/>
+							<div style="width:100%;height:1px;overflow: hidden; margin:0px auto;padding:0px;background-color:#D5D5D5;"></div>
+						</div>
+						<div id="" class="col-xs-6" >
+							<p :class="{js_display:r}">名字</p>
+							<input type="text" placeholder="名字" />
+							<div style="width:100%;overflow: hidden; height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+						</div>
+					</div>
+					<div id="" class="row" >
+						<div id="" class="col-xs-12" >
+							<p :class="{js_display:r}">用户名</p>
+							<input type="text" placeholder="用户名" style="width: 75%;"/>
+							<span id="" >
+							@gmail.com	
+							</span>
+							<div style="width:100%;overflow: hidden; height:1px;margin:0px 0px 5px 0px;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+							<p style="margin: 0;">您可以使用字母、数字和英文句点</p>
+						</div>
+					</div>
+					<div id="" class="row" style="display: none;">
+						<div id="" class="col-xs-12" >
+							<p style="visibility: hidden;">您的电子邮件地址</p>
+							<input type="text" placeholder="您的电子邮件地址" />
+							<p >您需要证实此电子邮件地址属于您</p>
+						</div>
+					</div>
+					<!--<button value="" style="display: none;">创建一个gmail账号</button>
+					<button value="">改用我的当前电子邮件地址</button>-->
+					<a href="#" style="display: none;">创建一个gmail账号</a>
+					<a href="#">改用我的当前电子邮件地址</a>
+					<div id="" class="row" >
+						<div id="" class="col-xs-6" >
+							<p :class="{js_display:r}">密码</p>
+							<input type="text" placeholder="密码" />
+							<div style="width:100%;overflow: hidden; height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+						</div>
+						<div id="" class="col-xs-6" >
+							<p :class="{js_display:r}">确认</p>
+							<input type="text" placeholder="确认" />
+							<div style="width:100%;overflow: hidden; height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+						</div>
+					</div>
+					<p>使用 8 个或更多字符（字母、数字和符号的组合）</p>
+					<div id="" class="row" >
+						<div id="" class="col-xs-9 ">
+							<div id="" style="height: 34px;">
+								<a style="line-height: 34px;">登陆现有账号</a>
+							</div>
+							
+						</div>
+						<div id="" class="col-xs-3 ">
+							<button onclick="" class="btn btn-success" >下一步</button>
+						</div>		
+					</div>
+				</div>
+				<div id="" class="col-xs-6">
+					<div id="" style="text-align: center;">
+						<img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244" height="244">
+					</div>
+					<p style="width: 240px; margin: auto;">只需一个帐号，您便可以使用 Google 的所有产品和服务。</p>
+				</div>
+			</div>
+		</div>		   
+    </body>
+    
+    <script type="text/javascript">
+    	vm = new Vue({
+			el:'#vm',
+				data: {
+					r:true,
+					firstname:"姓氏",
+					lastname:"名字",
+					username:"用户名",
+					password:"密码",
+					password_confirm:"确认",
+					content:["姓氏",""],
+				},
+			methods:{
+				handle_click(){				
+					this.firstname=this.content[1];
+					this.r=false;
+				},
+				handle_blur(){
+					this.firstname=this.content[0];
+					this.r=true;
+				}
+			}
+		});
+        /*$(document).ready(function(){
+             
+            //post向flask后台传参
+            $("#btn_post").click(function(){
+            	$.ajax({    
+                    type:'post',        
+                    url:'http://localhost:5000/data_post',    
+                    data:$("#myform").serialize(),    
+                    cache:false,    
+                    dataType:'json',    
+                    success:function(data){   
+                        alert(data.username);
+                        console.log(data);
+                    }    
+                });
+            });
+            
+            //get向flask后台传参
+            $("#btn_get").click(function(){
+                $.ajax({    
+                    type:'get',        
+                    url:'http://localhost:5000/data_get?username='+$("#username").val()+"&password="+$("#password").val(),      
+                    cache:false,    
+                    dataType:'json',    
+                    success:function(data){   
+                        alert(data.username);
+                        console.log(data);
+                    }    
+                }); 
+            });
+        });*/
+	</script>
+	
+</html>
