@@ -81,7 +81,7 @@ def printme(str):
 
 
 
-app=Flask(__name__)
+app=Flask(__name__,static_folder="../dist/static", template_folder="../dist")
 # r'/*' 是通配符，让本服务器所有的 URL 都允许跨域请求
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -110,7 +110,6 @@ def index():
 @app.route('/index', methods=['POST','GET'])
 def index_():
     return render_template('index.html')
-
 
 @app.route('/data_get', methods=['POST','GET'])
 def data_get():
