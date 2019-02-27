@@ -19,7 +19,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.externals import joblib
 
 # Creating Dataset and including the first row by setting no header as input
-dataset = pd.read_csv('C:\Users\jacky\.spyder\ictSamData.csv', header=None, encoding="GB2312")
+dataset = pd.read_csv('D:\WebDev\python_ICTForecast\ictSamData.csv', header=None, encoding="GB2312")
 # Renaming the columns
 dataset.columns = ['region', 'type', 'ProName', '1', '2', '3', '4', '5', 'Result']
 
@@ -85,8 +85,6 @@ app=Flask(__name__,static_folder="../dist/static", template_folder="../dist")
 # r'/*' 是通配符，让本服务器所有的 URL 都允许跨域请求
 reload(sys)
 sys.setdefaultencoding("utf-8")
-
-
 CORS(app, resources=r'/*')
 #sys.setdefaultencoding('utf-8')
 
